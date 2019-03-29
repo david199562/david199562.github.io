@@ -4,26 +4,50 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Test</title>
 </head>
-<body onload="goTo()" >
-   <script type="text/javascript">
-var pay_url=window.location.href.split('?')[1];
-      function goTo(){
-         if(navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
-            window.location.href = pay_url;//ios app协议
-            window.setTimeout(function() {
-               window.location.href = "https://itunes.apple.com/cn/app/id414478124";
-            }, 2000)
-         }
-        else     if(navigator.userAgent.match(/android/i)){
-            window.location.href = pay_url;//android app协议
-            window.setTimeout(function() {
-               window.location.href = "https://sj.qq.com/myapp/detail.htm?apkName=com.tencent.mm";//android 下载地址
-            }, 2000)
-         }
-         else {
-                window.location.href = pay_url;
-         }
-      };
-   </script>
+
+<body data-gr-c-s-loaded="true" class="vsc-initialized">
+	
+	<div style="text-align:center;margin: 6% 0;">
+		<a href="javascript:;" id="openApp1" style="font-size:5rem;text-decoration:none">打开支付宝</a>
+	</div>
+	<script type="text/javascript">
+		document.getElementById('openApp1').onclick = function(e){
+			if(navigator.userAgent.match(/(iPhone|iPod|iPad);?/i))
+			   {
+				window.location.href = "alipay://";//ios app协议
+				window.setTimeout(function() {
+					window.location.href = "https://itunes.apple.com/cn/app/id333206289";
+				}, 2000)
+			   }
+			   if(navigator.userAgent.match(/android/i))
+			   {
+				window.location.href = "alipay://app";//android app协议
+				window.setTimeout(function() {
+					window.location.href = "https://sj.qq.com/myapp/detail.htm?apkName=com.eg.android.AlipayGphone";//android 下载地址
+				}, 2000)    
+			}
+		};
+	</script>
+
+	<div style="text-align:center;margin: 6% 0;">
+		<a href="javascript:;" id="openApp2" style="font-size:5rem;text-decoration:none">打开微信</a>
+	</div>
+	<script type="text/javascript">
+		document.getElementById('openApp2').onclick = function(e){
+			if(navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)){
+				window.location.href = "weixin://";//ios app协议
+				window.setTimeout(function() {
+					window.location.href = "https://itunes.apple.com/cn/app/id414478124";
+				}, 2000)
+			}
+			if(navigator.userAgent.match(/android/i)){
+				window.location.href = "weixin://app";//android app协议
+				window.setTimeout(function() {
+					window.location.href = "https://sj.qq.com/myapp/detail.htm?apkName=com.tencent.mm";//android 下载地址
+				}, 2000)
+			}
+		};
+	</script>
+
 </body>
 </html>
