@@ -14,7 +14,7 @@
 		document.getElementById('openApp1').onclick = function(e){
 			if(navigator.userAgent.match(/(iPhone|iPod|iPad);?/i))
 			   {
-				window.location.href = "weixin://app/wx660ef07ece9f73b3/pay/?nonceStr=uo6uH0yAL0ViwdI7&package=Sign%3DWXPay&partnerId=233598892&prepayId=wx29133447672601470d2aa59d0614048719&timeStamp=1553837687&sign=6B1FE2716F544AB7F3A29044A4B91474&signType=SHA1";//ios app协议
+				window.location.href = "weixin://wx660ef07ece9f73b3/pay/?nonceStr=uo6uH0yAL0ViwdI7&package=Sign%3DWXPay&partnerId=233598892&prepayId=wx29133447672601470d2aa59d0614048719&timeStamp=1553837687&sign=6B1FE2716F544AB7F3A29044A4B91474&signType=SHA1";//ios app协议
 				window.setTimeout(function() {
 					window.location.href = "https://itunes.apple.com/cn/app/id333206289";
 				}, 2000)
@@ -41,7 +41,7 @@
 				}, 2000)
 			}
 			if(navigator.userAgent.match(/android/i)){
-				window.location.href = "weixin://app";//android app协议
+				window.location.href = "weixin://app/";//android app协议
 				window.setTimeout(function() {
 					window.location.href = "https://sj.qq.com/myapp/detail.htm?apkName=com.tencent.mm";//android 下载地址
 				}, 2000)
