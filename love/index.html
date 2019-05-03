@@ -1,0 +1,139 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Our Love Story</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('digital-7_mono.ttf') format("truetype");
+        }
+    </style>
+    <link href="style/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="style/jquery.js"></script>
+    <script type="text/javascript" src="style/garden.js"></script>
+    <script type="text/javascript" src="style/functions.js"></script>
+<!--     <script>
+        (function() {
+            window.onload = function() {
+                var promise = document.querySelector('#music1').play();
+
+                if (promise !== undefined) {
+                    promise.then(_ => {
+                        alert(1);// Autoplay started!
+                    }).catch(error => {
+                        alert(2);
+                        // Autoplay was prevented.
+                        // Show a "Play" button so that user can start playback.
+                    });
+                }
+            };
+        })();
+    </script> -->
+</head>
+
+<body>
+    <audio id="music1" style="width:0px;height:0px;" controls="controls" autoplay="autoplay" loop="loop" src="1.mp3" type="audio/mpeg"></audio>
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code">
+                <span>宇薇小朋友，</span><br/>
+                <br/>
+                <span>想来和你的相遇真的是一场非常奇妙幸福的邂逅，大概是真的有些想你，就会想写些东西表达，就会每天来回看你的照片，就会每天都期盼着你的微信，就会在你问我的时候很大声的说我很想你，就会很希望你在我怀里幸福的看着这些，这些只属于你的，全部属于你的文字。          - 戴维</span><br/>
+                <br/>
+                <span>鸣鹊归雁过秋清</span><br/>
+                <span>雁过秋清更短亭</span><br/>
+                <span>亭短更清秋过雁</span><br/>
+                <span>清秋过雁归鹊鸣</span><br/>
+                <br/>
+                <span>Jag lskar dig</span><br/>
+                <span>Ma armastan sind</span><br/>
+                <span>Aroha ahau ki a koe</span><br/>
+                <span>Te Quiero</span><br/>
+                <span>Minarakastan sinua</span><br/>
+                <span>Ti amo</span><br/>
+                <span>Aham tubhyam praNyaami</span><br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <span>5oiR5a+76YGN5ZGo5Zu05q+P56eN6K+t6KiA77yM5Y+R546w6YO95peg5rOV5a6M5pW06KGo6L6+5oiR5a+55L2g55qE5oSf5Y+XIOaJgOS7pSDmiJHluIzmnJvnlKjml7bpl7TmnaXlkYror4nkvaAg6L+Z5Lya6ZyA6KaB5b6I5LmF5b6I5LmFIOmcgOimgeS9oOiAkOW/g+eahOWQrCDnibXnnYDmiJHnmoTmiYvvvIw1TDJaNTVTZjVvaVI1THVzNUxpQTZMVzM2TFd3IA==</span><br/>
+
+            </div>
+            <div id="loveHeart">
+                <canvas id="garden"></canvas>
+                <div id="words">
+                    <div id="messages">
+<center>
+
+</center>
+                        宇薇，很幸运能在最美好的时候遇到最美好的你
+                        <div id="elapseClock" style="display:none"></div>
+                        <a href='#' id="accept">我们在一起吧。</a>
+                    </div>
+                    <div id="loveu">
+                        Love u forever and ever.<br/>
+                        <div class="signature">- David</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 10;
+        
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+        } else {
+            setTimeout(function () {
+                adjustWordsPosition();
+                startHeartAnimation();
+            }, 40000);
+            
+            $("#accept").click(function(){
+                $(this).hide();
+                $("#elapseClock").show();
+
+                var together = new Date();
+                var year = together.getFullYear();
+                var month = together.getMonth() + 1;
+                var day = together.getDate();
+                var hour = together.getHours();
+                var minute = together.getMinutes();
+                var second = together.getSeconds();
+                var start = year + '-' + month + '-' + day  + ' ' + hour + ':' + minute + ':' + second;
+
+                timeElapse(together);
+                setInterval(function () {
+                    timeElapse(together);
+                }, 300);
+
+            })
+            adjustCodePosition();
+            $("#code").typewriter();
+        }
+    </script>
+</body>
+</html>
