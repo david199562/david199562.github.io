@@ -14,33 +14,16 @@
     <script type="text/javascript" src="style/jquery.js"></script>
     <script type="text/javascript" src="style/garden.js"></script>
     <script type="text/javascript" src="style/functions.js"></script>
-<!--     <script>
-        (function() {
-            window.onload = function() {
-                var promise = document.querySelector('#music1').play();
-
-                if (promise !== undefined) {
-                    promise.then(_ => {
-                        alert(1);// Autoplay started!
-                    }).catch(error => {
-                        alert(2);
-                        // Autoplay was prevented.
-                        // Show a "Play" button so that user can start playback.
-                    });
-                }
-            };
-        })();
-    </script> -->
 </head>
 
 <body>
-    <audio id="music1" style="width:0px;height:0px;" controls="controls" autoplay="autoplay" loop="loop" src="1.mp3" type="audio/mpeg"></audio>
+    <audio id="music1" style="width:0px;height:0px;" controls="controls" autoplay="autoplay" loop="loop" src="2.mp3" type="audio/mpeg"></audio>
     <div id="mainDiv">
         <div id="content">
             <div id="code">
                 <span>宇薇小朋友，</span><br/>
                 <br/>
-                <span>想来和你的相遇真的是一场非常奇妙幸福的邂逅，大概是真的有些想你，就会想写些东西表达，就会每天来回看你的照片，就会每天都期盼着你的微信，就会在你问我的时候很大声的说我很想你，就会很希望你在我怀里幸福的看着这些，这些只属于你的，全部属于你的文字。          - 戴维</span><br/>
+                <span>想来和你的相遇真的是一场非常奇妙幸福的邂逅，大概是真的有些想你，就会想写些东西表达，就会<a href="diary.html" style="color: #3B3B3A; text-decoration: none;">每天</a>来回看你的照片，就会每天都期盼着你的微信，就会在你问我的时候很大声的说我很想你，就会很希望你在我怀里幸福的看着这些，这些只属于你的，全部属于你的文字。          - 戴维</span><br/>
                 <br/>
                 <span>鸣鹊归雁过秋清</span><br/>
                 <span>雁过秋清更短亭</span><br/>
@@ -82,9 +65,11 @@
 
 </center>
                         宇薇，很幸运能在最美好的时候遇到最美好的你
-                        <div id="since" style="display:none">We have been together for: </div>
-                        <div id="elapseClock" style="display:none"></div>
-                        <a href='#' id="accept">我们在一起吧。</a>
+                        <!-- <div id="since" style="display:none">We have been together for: </div> -->
+                        <!-- <div id="elapseClock" style="display:none"></div> -->
+                        <div id="since">We have been together for: </div>
+                        <div id="elapseClock"></div>
+                        <!-- <a href='#' id="accept">我们在一起吧。</a> -->
                     </div>
                     <div id="loveu">
                         Love u forever and ever.<br/>
@@ -111,28 +96,43 @@
             setTimeout(function () {
                 adjustWordsPosition();
                 startHeartAnimation();
-            }, 40000);
+            }, 23000);
             
-            $("#accept").click(function(){
-                $(this).hide();
-                $("#elapseClock").show();
-                $("#since").show();
+            var together = new Date('May 03, 2019 21:56:00');
+            var year = together.getFullYear();
+            var month = together.getMonth() + 1;
+            var day = together.getDate();
+            var hour = together.getHours();
+            var minute = together.getMinutes();
+            var second = together.getSeconds();
+            var start = year + '-' + month + '-' + day  + ' ' + hour + ':' + minute + ':' + second;
 
-                var together = new Date('May 03, 2019 21:56:00');
-                var year = together.getFullYear();
-                var month = together.getMonth() + 1;
-                var day = together.getDate();
-                var hour = together.getHours();
-                var minute = together.getMinutes();
-                var second = together.getSeconds();
-                var start = year + '-' + month + '-' + day  + ' ' + hour + ':' + minute + ':' + second;
-
+            timeElapse(together);
+            setInterval(function () {
                 timeElapse(together);
-                setInterval(function () {
-                    timeElapse(together);
-                }, 300);
+            }, 300);
 
-            })
+            // $("#accept").click(function(){
+            //     $(this).hide();
+            //     $("#elapseClock").show();
+            //     $("#since").show();
+
+            //     var together = new Date('May 03, 2019 21:56:00');
+            //     var year = together.getFullYear();
+            //     var month = together.getMonth() + 1;
+            //     var day = together.getDate();
+            //     var hour = together.getHours();
+            //     var minute = together.getMinutes();
+            //     var second = together.getSeconds();
+            //     var start = year + '-' + month + '-' + day  + ' ' + hour + ':' + minute + ':' + second;
+
+            //     timeElapse(together);
+            //     setInterval(function () {
+            //         timeElapse(together);
+            //     }, 300);
+
+            // })
+
             adjustCodePosition();
             $("#code").typewriter();
         }
